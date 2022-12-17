@@ -155,17 +155,20 @@
             <input type="radio" id="tab3" name="css-tabs">
             <input type="radio" id="tab4" name="css-tabs">
             <div class="main-header">
-                <span class="menu-link-main link-menu-padding">{{ craftmend.account.serverName }} <span
+                <span class="menu-link-main link-menu-padding font-bold">DroomCraft Revisited | Bezoekers panel
+                    <div class="hidden">
+                    <span
                         class="small-pill free" style="display: none;" id="free-pill">{% navbar.free %}</span><span
-                        id="premium-pill" style="display: none;" class="small-pill premium">{% navbar.premium %}</span></span>
+                        id="premium-pill" style="display: none;" class="small-pill premium">{% navbar.premium %}</span>
+                </div></span>
                 <div class="header-menu tabbed tabs" style="display: none;" hs="{{ oam.hidden_until_started }}">
-                    <span class="tab"><label for="tab1" class="main-header-link">{% navbar.audio %}</label></span>
-                    <span class="notification tab shockwave" style="display: none;" hs="{{ navbar.vc_button }}">
+                    <span onclick="showPhotos(false)" class="tab"><label for="tab1" class="main-header-link">{% navbar.audio %}</label></span>
+                    <span class="notification tab shockwave" onclick="showPhotos(false)" style="display: none;" hs="{{ navbar.vc_button }}">
                         <span class="notification-number">{{ oam.rtc_peer_count }}</span>
                         <label for="tab2" id="open-voice-tab" class="main-header-link">{% navbar.vc %}</label>
                     </span>
-                    <span class="tab"><label class="main-header-link" for="tab3">{% navbar.settings %}</label></span>
-                    <span class="tab"><label class="main-header-link" for="tab4">{% navbar.photos %}</label></span>
+                    <span onclick="showPhotos(false)" class="tab"><label class="main-header-link" for="tab3">{% navbar.settings %}</label></span>
+                    <span onclick="showPhotos(true)" class="tab"><label class="main-header-link" for="tab4">{% navbar.photos %}</label></span>
                 </div>
                 <div class="header-notice">
                     <a class="menu-link-main soft-text" href="https://openaudiomc.net/">
@@ -589,20 +592,27 @@
             </div>
 
             <!-- Fotos -->
-            <div class="tab-content">
-                <div class="content-wrapper">
-                    <div class="content-section">
-                        <div class="content-section-title">Foto's</div>
-                        <div class="content-card-collection items-stretch" id="foto-content">
-                            <div class="content-card mt-5" id="foto">
+            <div id="photos-section" style="display: none" class="content-wrapper">
+                <div class="content-section">
+                    <div class="content-section-title">Foto's</div>
+                    <div class="content-card-collection items-stretch" id="photo-content">
+                        <div class="content-card settings-card">
+                            <span>
+                                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path></svg>
+                                    FOTO #1
+                            </span>
+                            <div class="mx-auto content-card-content content-card-content-border-bottom">
+                                <img src="https://i.imgur.com/phhx1qn.png" alt="Foto#1"">
                             </div>
-                            <h1>Hello World</h1>
+                            <div class="content-card-buttons">
+                                <label class="content-pill status-button">
+                                    <span style="display: inline;">Download Foto</span>
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-        </div>
     </div>
     <footer id="footer">
         <img id="sc-cover" style="display: none;" class="sc-cover"
@@ -627,5 +637,13 @@
 </div>
 
 <script src="OpenAudioMc.bundle.js?version=__BUILD_VERSION__"></script>
+    <script>
+        function showPhotos(show) {
+            if (show) {
+                document.getElementById("photos-section").style.display = "block";
+            } else document.getElementById("photos-section").style.display = "none";
+
+        }
+    </script>
 </body>
 </html>

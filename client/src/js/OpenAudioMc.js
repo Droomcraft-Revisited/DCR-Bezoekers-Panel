@@ -187,7 +187,7 @@ export class OpenAudioMc extends Getters {
     }
 }
 
-setLoaderText("loading the client...")
+setLoaderText("Client aan het laden....")
 window.onload = linkBootListeners;
 window.onhashchange = () => window.location.reload();
 
