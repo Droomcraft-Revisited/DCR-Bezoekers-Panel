@@ -9,6 +9,8 @@ eclipse
 .DS_Store
 bin
 
+docs/production-client/
+
 .idea/*
 
 out
