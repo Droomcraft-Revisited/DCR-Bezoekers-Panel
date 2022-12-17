@@ -10,6 +10,7 @@ ui.logout=Déconnexion
 navbar.audio=Audio
 navbar.vc=Chat vocal
 navbar.settings=Paramètres
+navbar.photos=Photos
 navbar.free=gratuit
 navbar.premium=premium
 

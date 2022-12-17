@@ -10,6 +10,7 @@ ui.logout=Uitloggen
 navbar.audio=Audio
 navbar.vc=VoiceChat
 navbar.settings=Instellingen
+navbar.photos=Foto's
 navbar.free=gratis
 navbar.premium=patreon
 
@@ -18,7 +19,7 @@ home.activateText=Via deze persoonlijke webpagina zal audio en voicechat worden 
 home.clickAnywhere=Klik ergens om te beginnen
 home.activateHeader=Welkom op de audio client
 home.welcome=Welkom, %player!
-home.header=Welkom bij onze audio server! Houd deze pagina open om de muziek en geluidseffecten van onze wereld te beluisteren. Je kan op ieder gewenst moment terug komen om je volume aan te passen.
+home.header=Welkom bij de DCR Bezoekers panel! Houd deze pagina open om de muziek en geluidseffecten van onze wereld te beluisteren. Je kan op ieder gewenst moment terug komen om je volume aan te passen.
 home.volumeContext=Hier kan je het volume van alle geluiden aanpassen. Je kan ook <pre>/volume &lt;volume&gt;</pre> gebruiken in onze server om je volume te wijzigen zonder de game te verlaten.
 home.audioControls=Audio instellingen
 home.notificationsTitle=Meldingen
