@@ -10,6 +10,7 @@ ui.logout=Ausloggen
 navbar.audio=Audio
 navbar.vc=Sprachchat
 navbar.settings=Einstellungen
+navbar.photos=Foto
 navbar.free=kostenlos
 navbar.premium=premium
 

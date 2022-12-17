@@ -10,6 +10,7 @@ ui.logout=Cerrar sesión
 navbar.audio=Audio
 navbar.vc=Chat de Voz
 navbar.settings=Ajustes
+navbar.photos=Imágenes
 navbar.free=gratis
 navbar.premium=premium
 
