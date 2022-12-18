@@ -11,6 +11,7 @@ export function HandleModernLogin(openAudioMc, accept, reject, tokenSet) {
     fetch('https://cloud.openaudiomc.net/api/v3/account-services/client/login/' + tokenSet.publicServerKey )
         .then(function (response) {
             response.json().then(result => {
+                console.log("[DCR] ModernLoginHandler = " + JSON.stringify(result, null, 4))
                 // error handling first! because, reasons! alright fuck you just let me do what i want!
                 if (result.errors == null || result.errors.length != 0) {
                     reject(result.errors);

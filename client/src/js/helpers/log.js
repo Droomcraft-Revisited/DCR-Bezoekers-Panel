@@ -16,6 +16,9 @@ export function oadebuglog(message) {
 }
 
 export function oalog(message) {
+
+    // get rid of the huge amount of spam shitting logs
+    //return;
     console.log("[OpenAudioMc] " + message);
     logLines.push(message);
 

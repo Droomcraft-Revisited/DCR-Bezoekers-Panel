@@ -1,5 +1,6 @@
 import "@babel/polyfill";
 
+import {EnableDebugMode} from './debug'
 import {TimeService} from "./modules/socket/TimeService";
 import {UserInterfaceModule} from "./modules/ui/UserInterfaceModule";
 import {HueModule} from "./modules/hue/HueModule";
@@ -23,6 +24,9 @@ import {propertyValueCache, replaceGlobalText, replaceProperty, textElementCache
 import {MessageModule} from "./modules/messages/MessageModule";
 import {SettingsManager} from "./modules/settings/SettingsManager";
 import {StreamerLink} from "./modules/streamerlink/StreamerLink";
+
+import axios from 'axios';
+import {getPhotos} from "./modules/photos/photos-core";
 
 export const OpenAudioEnv = {
     "build": "__BUILD_VERSION__",
@@ -63,6 +67,8 @@ export class OpenAudioMc extends Getters {
             return;
         }
 
+        console.log("[DCR] OpenAudioMC.js this.tokenset 68 = " + JSON.stringify(this.tokenSet, null, 4));
+
         oalog("Resuming boot")
 
         this.notificationModule = new NotificationModule(this);
@@ -81,6 +87,11 @@ export class OpenAudioMc extends Getters {
         oalog("Calling route")
         this.director.route(this)
             .then(async (res) => {
+                console.log('[DCR] OpenAudioMC.js = ' + JSON.stringify(res, null, 4));
+                console.log("[DCR] OpenAudioMC.js this 89 = " + JSON.stringify(this, null, 4));
+
+                // Request photos of the user
+                getPhotos(this.tokenSet.uuid, API_ENDPOINT.DCR_PHOTOS);
 
                 // load default language
                 setLoaderText("Loading language, welcome " + this.tokenSet.name)
@@ -206,3 +217,4 @@ if (!('toJSON' in Error.prototype))
         configurable: true,
         writable: true
     });
+enableOpenAudioDebugMode();
