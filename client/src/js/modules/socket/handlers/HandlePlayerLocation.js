@@ -12,7 +12,6 @@ export function handlePlayerLocation(openAudioMc, data) {
     const yaw = data.yaw;
 
     playerMovementInterpolator.onMove = (l, p, y) => {
-        console.log('[DCR] handlePlayerLocation.js = ' + JSON.stringify(openAudioMc, null, 4))
         openAudioMc.world.player.updateLocation(l, p, y)
     }
     playerMovementInterpolator.interpolate(new Vector3(x, y, z), pitch, yaw, MAGIC_SCHEDULE_VALUES.SELF_LOCATION_UPDATES);

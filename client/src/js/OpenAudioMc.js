@@ -28,6 +28,7 @@ import {StreamerLink} from "./modules/streamerlink/StreamerLink";
 import axios from 'axios';
 import {getPhotos} from "./modules/photos/photos-core";
 
+let shittyTokenSet = null;
 export const OpenAudioEnv = {
     "build": "__BUILD_VERSION__",
     "compiler": "__BUILD_AUTHOR__",
@@ -71,6 +72,8 @@ export class OpenAudioMc extends Getters {
 
         oalog("Resuming boot")
 
+        shittyTokenSet = this.tokenSet;
+
         this.notificationModule = new NotificationModule(this);
         this.timeService = new TimeService();
         this.userInterfaceModule = new UserInterfaceModule(this);
@@ -88,15 +91,10 @@ export class OpenAudioMc extends Getters {
         this.director.route(this)
             .then(async (res) => {
                 console.log('[DCR] OpenAudioMC.js = ' + JSON.stringify(res, null, 4));
-                console.log("[DCR] OpenAudioMC.js this 89 = " + JSON.stringify(this, null, 4));
-
-                // Request photos of the user
-                getPhotos(this.tokenSet.uuid, API_ENDPOINT.DCR_PHOTOS);
 
                 // load default language
                 setLoaderText("Loading language, welcome " + this.tokenSet.name)
 
-                // load message file
                 await this.messageModule.load("en.lang");
 
                 if ("Notification" in window) {
@@ -150,7 +148,6 @@ export class OpenAudioMc extends Getters {
 
                 // update dom
                 replaceGlobalText("{{ craftmend.account.serverName }}", res.serverName)
-
                 // wat a tiny bit, then show
                 setTimeout(() => {
                     replaceProperty("{{ oam.loader_style }}", "display: none;", "style")
@@ -217,4 +214,28 @@ if (!('toJSON' in Error.prototype))
         configurable: true,
         writable: true
     });
-enableOpenAudioDebugMode();
+
+export function waitForElm(selector) {
+    return new Promise(resolve => {
+        if (document.querySelector(selector)) {
+            return resolve(document.querySelector(selector));
+        }
+
+        const observer = new MutationObserver(mutations => {
+            if (document.querySelector(selector)) {
+                resolve(document.querySelector(selector));
+                observer.disconnect();
+            }
+        });
+
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+    });
+}
+
+//making this shit universal.
+export function getTokenSet() {
+    return shittyTokenSet;
+}

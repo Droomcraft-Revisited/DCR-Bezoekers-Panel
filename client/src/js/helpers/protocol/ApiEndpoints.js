@@ -12,5 +12,5 @@ export const API_ENDPOINT = {
     STREAMER_MODE: "https://api.openaudiomc.net/client/streamermode/",
 
     //DCR Photos
-    DCR_PHOTOS: "http://127.0.0.1:8000/photos"
+    DCR_PHOTOS: "http://127.0.0.1:8000/photos/"
 }

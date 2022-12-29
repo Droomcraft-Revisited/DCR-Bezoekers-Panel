@@ -5,6 +5,7 @@ import {ReportError} from '../protocol/ErrorReporter'
 import {DebugPanel, EnableDebugMode, WhenDebugging} from "../../debug";
 import {prepareLogging} from "../log";
 import {replaceGlobalText, replaceProperty} from "../domhelper";
+import {API_ENDPOINT} from "../protocol/ApiEndpoints";
 
 let openAudioMc = null
 
@@ -51,6 +52,7 @@ export function linkBootListeners() {
             if (tokenSet != null && tokenSet.name != null) {
                 replaceProperty("{{ oam.player_head }}", "https://visage.surgeplay.com/bust/" + tokenSet.uuid + "?overlay", "src")
                 replaceGlobalText("{{ oam.player_name }}", tokenSet.name)
+
                 openAudioMc = new OpenAudioMc()
                 window.openAudioMc = openAudioMc;
             }

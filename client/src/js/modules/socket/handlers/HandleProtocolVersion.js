@@ -1,8 +1,29 @@
 
 import {oalog} from "../../../helpers/log";
+import {API_ENDPOINT} from "../../../helpers/protocol/ApiEndpoints";
+import {waitForElm} from "../../../OpenAudioMc"
+import {getTokenSet} from "../../../OpenAudioMc";
 
 export function handleProtocolVersion(openAudioMc, data) {
     const revision = parseInt(data.protocolRevision);
+
+    waitForElm('#dcr-photos').then((elm) => {
+        //console.log('Element found', elm);
+        //console.log("DCR => BEFORE IFRAME");
+        let photos_iframe = window.document.getElementById("dcr-photos");
+
+        let tokenSet = getTokenSet();
+        console.log("DCR => TOKENSET = " + JSON.stringify(tokenSet, null, 4));
+
+        if (API_ENDPOINT.DCR_PHOTOS.slice(-1) === "/") {
+            photos_iframe.src = API_ENDPOINT.DCR_PHOTOS + tokenSet.uuid;
+        } else photos_iframe.src = API_ENDPOINT.DCR_PHOTOS + "/" + tokenSet.uuid;
+
+        photos_iframe.style.display = "block";
+
+        //console.log("DCR => AFTER IFRAME");
+        //console.log(elm.textContent);
+    });
 
     oalog("Received PROTOCOL revision update");
     if (revision >= 2) {

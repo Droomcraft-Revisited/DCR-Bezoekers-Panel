@@ -59,7 +59,6 @@ export default class ClientTokenSet {
 
                 // all appears to be okay! thats good! give a session
                 const out = new ClientTokenSet(serverUuid, playerUuid, playerName, playerToken)
-                console.log('[dcr] ClientTokenSet.js 64 => ' + JSON.stringify(out, null, 4))
                 window.tokenCache = out;
                 console.log("Resolving legacy token")
                 resolve(out);
