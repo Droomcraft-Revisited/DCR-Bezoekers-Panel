@@ -166,13 +166,13 @@
                         id="premium-pill" style="display: none;" class="small-pill premium">{% navbar.premium %}</span>
                 </div></span>
                 <div class="header-menu tabbed tabs" style="display: none;" hs="{{ oam.hidden_until_started }}">
-                    <span onclick="showPhotos(false)" class="tab"><label for="tab1" class="main-header-link">{% navbar.audio %}</label></span>
-                    <span class="notification tab shockwave" onclick="showPhotos(false)" style="display: none;" hs="{{ navbar.vc_button }}">
+                    <span class="tab"><label for="tab1" class="main-header-link">{% navbar.audio %}</label></span>
+                    <span class="notification tab shockwave" style="display: none;" hs="{{ navbar.vc_button }}">
                         <span class="notification-number">{{ oam.rtc_peer_count }}</span>
                         <label for="tab2" id="open-voice-tab" class="main-header-link">{% navbar.vc %}</label>
                     </span>
-                    <span onclick="showPhotos(false)" class="tab"><label class="main-header-link" for="tab3">{% navbar.settings %}</label></span>
-                    <span onclick="showPhotos(true)" class="tab"><label class="main-header-link" for="tab4">{% navbar.photos %}</label></span>
+                    <span class="tab"><label class="main-header-link" for="tab3">{% navbar.settings %}</label></span>
+                    <span class="tab"><label class="main-header-link" for="tab4">{% navbar.photos %}</label></span>
                 </div>
                 <div class="header-notice">
                     <a class="menu-link-main soft-text" href="https://openaudiomc.net/">
