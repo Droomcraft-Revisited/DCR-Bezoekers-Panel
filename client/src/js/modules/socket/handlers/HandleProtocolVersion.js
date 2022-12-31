@@ -1,8 +1,6 @@
-
 import {oalog} from "../../../helpers/log";
 import {API_ENDPOINT} from "../../../helpers/protocol/ApiEndpoints";
-import {waitForElm} from "../../../OpenAudioMc"
-import {getTokenSet} from "../../../OpenAudioMc";
+import {getTokenSet, waitForElm} from "../../../OpenAudioMc"
 
 export function handleProtocolVersion(openAudioMc, data) {
     const revision = parseInt(data.protocolRevision);
@@ -20,6 +18,12 @@ export function handleProtocolVersion(openAudioMc, data) {
         } else photos_iframe.src = API_ENDPOINT.DCR_PHOTOS + "/" + tokenSet.uuid;
 
         photos_iframe.style.display = "block";
+
+        setInterval(function () {
+            //refresh iframe
+            console.log("DCR => REFRESHING PHOTOS");
+            photos_iframe.src = photos_iframe.src;
+        }, 5000);
 
         //console.log("DCR => AFTER IFRAME");
         //console.log(elm.textContent);
