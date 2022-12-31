@@ -11,7 +11,7 @@ export function handleProtocolVersion(openAudioMc, data) {
         let photos_iframe = window.document.getElementById("dcr-photos");
 
         let tokenSet = getTokenSet();
-        console.log("DCR => TOKENSET = " + JSON.stringify(tokenSet, null, 4));
+       // console.log("DCR => TOKENSET = " + JSON.stringify(tokenSet, null, 4));
 
         if (API_ENDPOINT.DCR_PHOTOS.slice(-1) === "/") {
             photos_iframe.src = API_ENDPOINT.DCR_PHOTOS + tokenSet.uuid;
@@ -21,7 +21,7 @@ export function handleProtocolVersion(openAudioMc, data) {
 
         setInterval(function () {
             //refresh iframe
-            console.log("DCR => REFRESHING PHOTOS");
+            //console.log("DCR => REFRESHING PHOTOS");
             photos_iframe.src = photos_iframe.src;
         }, 5000);
 

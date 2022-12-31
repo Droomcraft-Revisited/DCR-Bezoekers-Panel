@@ -68,7 +68,7 @@ export class OpenAudioMc extends Getters {
             return;
         }
 
-        console.log("[DCR] OpenAudioMC.js this.tokenset 68 = " + JSON.stringify(this.tokenSet, null, 4));
+        //console.log("[DCR] OpenAudioMC.js this.tokenset 68 = " + JSON.stringify(this.tokenSet, null, 4));
 
         oalog("Resuming boot")
 
@@ -90,7 +90,7 @@ export class OpenAudioMc extends Getters {
         oalog("Calling route")
         this.director.route(this)
             .then(async (res) => {
-                console.log('[DCR] OpenAudioMC.js = ' + JSON.stringify(res, null, 4));
+               // console.log('[DCR] OpenAudioMC.js = ' + JSON.stringify(res, null, 4));
 
                 // load default language
                 setLoaderText("Loading language, welcome " + this.tokenSet.name)
