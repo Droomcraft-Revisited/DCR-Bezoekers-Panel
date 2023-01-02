@@ -1,4 +1,4 @@
-# OpenAudioMc
+# DCR Bezoekers panel
 [![Build Status](https://travis-ci.org/Mindgamesnl/OpenAudioMc.svg?branch=master)](https://travis-ci.org/Mindgamesnl/OpenAudioMc)
 ![commit activity](https://img.shields.io/github/commit-activity/4w/mindgamesnl/openaudiomc.svg)
 [![Lines of Code](https://img.shields.io/tokei/lines/github/Mindgamesnl/OpenAudioMc)](https://github.com/Mindgamesnl/OpenAudioMc)
@@ -6,6 +6,18 @@
 [![](https://img.shields.io/badge/Paper-1.17.1-brightgreen.svg?colorB=DC3340)](https://papermc.io/downloads)
 [![](https://img.shields.io/discord/245497740589662209.svg?color=%237289da&label=Discord&logo=discord&logoColor=%237289da)](https://discord.gg/C4ZZ6u2)
 [![](https://img.shields.io/badge/Patreon-Support-orange.svg?logo=Patreon)](https://www.patreon.com/mindgamesnl)
+
+Welkom bij de git repository van het DCR Bezoekers panel. Hierin vind je de code die gebruikt wordt voor het bezoekers panel.
+Door ons is alleen de code van de client zelf aangepast. Verder zijn er geen veranderingen aangepast aan de plugin. 
+Ook is de build versie in `docs/production-client` niet up to date in de git repository, we hebben er namelijk voor gekozen om deze aan de .gitignore toe te voegen.
+Alhoewel je natuurlijk de client zelf kan builden via de instructies hieronder. Voor vragen of opmerkingen kan je terecht op discord: `Timtendo12#2909` of onze e-mail: `Info@droomcraftrevisited.nl`.
+
+## ActionPhoto code?
+De source code voor de ActionPhoto bevind zich hier niet, Deze OAM Client haalt alleen data van onze backend server af via de ActionPhoto API. De code van de actionphoto is op dit moment closed source.
+**Mocht je een server, developer of code enthiousiast zijn en geinterreseerd te zijn in de code, dan kan je contact opnemen met ons via discord of e-mail. Misschien maken we een uitzondering voor jou**, Alhoewel de code 
+inderdaad closed source is om de kwaliteit en orginaliteit in onze versie van de AP te behouden. Ben ik stieken klein beetje van mening dat alle code open source moet zijn ;).
+---------------------------------------
+# OpenAudioMc
 
 ![welcome](https://i.imgur.com/OEvbUQb_d.png?maxwidth=1920&fidelity=grand)
 
