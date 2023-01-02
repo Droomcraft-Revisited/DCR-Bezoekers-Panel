@@ -16,7 +16,6 @@ Alhoewel je natuurlijk de client zelf kan builden via de instructies hieronder. 
 De source code voor de ActionPhoto bevind zich hier niet, Deze OAM Client haalt alleen data van onze backend server af via de ActionPhoto API. De code van de actionphoto is op dit moment closed source.
 **Mocht je een server, developer of code enthiousiast zijn en geinterreseerd te zijn in de code, dan kan je contact opnemen met ons via discord of e-mail. Misschien maken we een uitzondering voor jou**, Alhoewel de code 
 inderdaad closed source is om de kwaliteit en orginaliteit in onze versie van de AP te behouden. Ben ik stieken klein beetje van mening dat alle code open source moet zijn ;).
----------------------------------------
 # OpenAudioMc
 
 ![welcome](https://i.imgur.com/OEvbUQb_d.png?maxwidth=1920&fidelity=grand)
