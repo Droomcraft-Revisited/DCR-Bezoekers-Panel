@@ -81,6 +81,10 @@ export default class DebugPage extends React.Component {
         })
     }
 
+    actionPhotoApiConnected() {
+
+    }
+
     componentWillUnmount() {
         clearInterval(this.state.radarTask);
         clearInterval(this.state.graphTask);
@@ -90,6 +94,10 @@ export default class DebugPage extends React.Component {
         return (
             <div className={"w-full h-full flex flex-col"}>
                 <div className="flex flex-wrap">
+                    <OaStyleCard title={"ActionPhoto Data"} isDanger={true} dark={true}>
+                        // show if action photo api connection is working
+                        <p className={"text-white"}>ActionPhoto API: <i className={"text-blue-200"}>{getGlobalState().actionPhotoApiConnected ? "Connected" : "Not connected"}</i></p>
+                    </OaStyleCard>
                     <OaStyleCard title={"whoami"} isDanger={true} dark={true}>
                         <p className={"text-white"}>Welcome to the debugging page. You can toggle this tab by pressing <i className={"text-blue-100"}>d</i></p>
                         <hr />
@@ -99,7 +107,6 @@ export default class DebugPage extends React.Component {
                         <p className={"text-white"}><b>Player:</b> <i className={"text-blue-200"}>{getGlobalState().currentUser.userName}</i></p>
                     </OaStyleCard>
                     {this.state.panels}
-
 
                     <OaStyleCard title={"Spatial Rendering"}>
                         <Radar player={this.state.playerLocation} entities={this.state.peers} speakers={this.state.speakers} />/>

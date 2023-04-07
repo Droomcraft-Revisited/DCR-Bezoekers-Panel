@@ -10,6 +10,7 @@ import {connect} from "react-redux";
 import {StaticFooter} from "../../components/footer/StaticFooter";
 import {InputModal} from "../../components/modal/InputModal";
 import DebugPage from "./pages/debug/DebugPage";
+import ActionPhotoPage from "./pages/actionPhoto/ActionPhotoPage";
 
 class ClientView extends React.Component {
     render() {
@@ -22,6 +23,7 @@ class ClientView extends React.Component {
                         <TabPage name="Audio" content={<AudioPage/>}/>
                         <TabPage hidden={!this.props.voiceState.ready} name="VoiceChat" content={<VoicePage/>}/>
                         <TabPage name="Settings" content={<SettingsPage/>}/>
+                        <TabPage name="ActionPhoto" content={<ActionPhotoPage/>}/>
                         <TabPage hidden={!this.props.debugMode} name="Debug" content={<DebugPage />} />
                     </TabWindow>
                 </div>

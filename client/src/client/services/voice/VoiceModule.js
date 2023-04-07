@@ -214,7 +214,7 @@ export const VoiceModule = new class IVoiceModule {
 
     getPeerLocations() {
         let locations = [];
-        for (let [key, peer] of this.peerMap) {
+        for (let [peer] of this.peerMap) {
             if (peer.stream) {
                 locations.push({
                     x: peer.stream.x,

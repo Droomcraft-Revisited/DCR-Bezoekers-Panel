@@ -1,6 +1,6 @@
 {
-  "short_name": "OpenAudioMc",
-  "name": "OpenAudioMc Web Client",
+  "short_name": "DCR Bezoekers Panel",
+  "name": "DroomCraft Revisted Bezoekers Panel",
   "icons": [],
   "start_url": ".",
   "display": "standalone",

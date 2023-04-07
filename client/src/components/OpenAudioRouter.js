@@ -10,6 +10,13 @@ import {BlockedLoginView} from "../views/login/BlockedLoginView";
 export class OpenAudioController extends React.Component {
     static contextType = OAC;
 
+    componentDidMount() {
+        // request notification permission and save the response in localStorage
+        Notification.requestPermission().then((result) => {
+            localStorage.setItem("notificationPermission", result);
+        });
+    }
+
     render() {
         let currentView = <div>?</div>;
         let oa = this.context;
