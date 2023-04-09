@@ -2,6 +2,7 @@ import UrlReader from "../util/UrlReader";
 import {API_ENDPOINT} from "../config/ApiEndpoints";
 import {ReportError} from "../util/ErrorReporter";
 import {setGlobalState} from "../../state/store";
+import {dcrlog} from "../util/log";
 
 export default class ClientTokenSet {
 
@@ -16,7 +17,7 @@ export default class ClientTokenSet {
 
     initialize() {
         return new Promise((resolve => {
-
+            dcrlog("Initializing client token set");
             // mock login
             let url = window.location.href;
             if (url == null) {
@@ -36,6 +37,8 @@ export default class ClientTokenSet {
                 }
 
                 let query = atob(params.data).split(":");
+
+                console.log("[DCRAudio] Query: ", query);
 
                 // validate all data
                 if (query.length !== 4) {
